@@ -5,7 +5,7 @@
    - Se agregó mensaje de bienvenida
 */
 
-//------------------------------Libreriías incluidas
+//------------------------------Librerías incluidas
 
 #include <EEPROM.h>
 //#include <LiquidCrystal.h>// include the library code
@@ -22,7 +22,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 //------------------------------E/S
 
-#define led 8   //Pin para el led
+#define led 8   //Pin para la salida de actuación
 
 #define Puls_arrib_min 6   //Pulsador seteo en pin 7 (TMIN)
 #define Puls_abaj_min 7   // Pulsador seteo en pin 8 (TMIN)
@@ -140,6 +140,8 @@ void loop()       {
 
   void Monitor (){
  
+//----------------VALORES MEDIDOS----------------
+     
   lcd.setCursor(0,0);
   lcd.print("T:");
   lcd.print(t,0);
@@ -166,7 +168,7 @@ void loop()       {
 
  void Seteo () { 
   
-//-----------------------------SET (TMIN)-------------------------------------
+//-----------------------------SET (TMIN)----------------------------
 
              if (digitalRead (Puls_arrib_max)==true)// si el pulsador se activa, setea 1 grado
              {
